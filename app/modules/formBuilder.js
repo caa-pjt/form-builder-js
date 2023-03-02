@@ -1,4 +1,8 @@
-import { HtmlClass } from "./html.js"
+/**
+* @fileOverview 
+* @author Carlos Antunes
+* @version 1.0.0
+*/
 
 /**
 * @param {Object} options - liste des options à injecter dans le formulaire
@@ -17,17 +21,20 @@ export class FormBuilder {
     
     /**
     * 
-    * @param {object|null} options - Objet contenant la liste des options à injecté dans l'HTML
-    * @property {string} options.method - GET POST PUT DELETE
-    * @property {string} options.action - http://www....
-    * @property {string} options.class - className
-    * @property {string} options.id - id
+    * @param {Object} options - Objet contenant la liste des options à injecté dans l'HTML
+    * @property {string} form.method - GET POST PUT DELETE
+    * @property {string} form.action - http://www....
+    * @property {string} form.class - className
+    * @property {string} form.id - id
+    * @property {string} options.output - htmlQuerySelector
+    * @property {string} options.surround.class - surround div className
     */
     constructor(options){
 
         this.options = Object.assign({}, this.options, options.options)
         this.formOptions = Object.assign({}, this.form, options.form)
         
+
         this.setForm()
     }
     
@@ -135,6 +142,9 @@ render(tag, attr = {}){
         }
         if(key === "value" && tag === "textarea"){
             debugger
+        }
+        if(key === "required" && value === false){
+            continue
         }
         if(key == 'options'){
             

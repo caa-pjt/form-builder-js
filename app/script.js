@@ -28,7 +28,7 @@ const form = new FormBuilder({
             action :""
         },
         options : {
-            // output : "#app",
+            output : "#app",
             surround : {
                 class : "row g-3"
             }
@@ -90,5 +90,3 @@ const form = new FormBuilder({
 
 
 form.appendIn('#app')
-
-    
