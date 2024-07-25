@@ -173,9 +173,14 @@ select(el, options){
     return el 
 }
 
-appendIn(cible){
-    const renderView = document.querySelector(cible)
-    return renderView.appendChild(this.form)
-}
-
+  /**
+   * @param {String} cible - QuerySelector
+   * @returns {HTMLElement} - Retourne le formulaire dans la vue
+   * @example form.appendIn("#app")
+   */
+  appendIn(cible) {
+    const renderView = document.querySelector(cible);
+    console.log(renderView);
+    return renderView.appendChild(this.form);
+  }
 }
